@@ -23,13 +23,15 @@ class UdaciList
     @items.push GoalItem.new(type,description, options) if type == "goal"
   end
   def delete(index, *other_indexes)
-    if (@items.length - (1 + other_indexes.length)) < index
-      raise UdaciListErrors::IndexExceedsListSize
-    end
     other_indexes.push(index)
     other_indexes.sort! { |x,y| y <=> x}
+    other_indexes.each do |index|
+      if @items.length - 1 < index
+        raise UdaciListErrors::IndexExceedsListSize
+      end
+    end
     other_indexes.each do |to_delete|
-      @items.delete_at(to_delete)
+    @items.delete_at(to_delete)
     end
   end
 
@@ -46,18 +48,18 @@ class UdaciList
   table.style = {:border_x => "=", :border_i => "x"}
   puts table
 end
-  
 
-  def filter(item_type)
-    filtered_items = self.class.new(title:"List of #{item_type}'s from #{@title}")
-    @items.each do |item|
-      if item.type == item_type
-        filtered_items.items.push item
-      end
+
+def filter(item_type)
+  filtered_items = self.class.new(title:"List of #{item_type}'s from #{@title}")
+  @items.each do |item|
+    if item.type == item_type
+      filtered_items.items.push item
     end
-    if filtered_items == nil
-      raise UdaciListErrors::NoItemsOfThatType
-    end
-    return filtered_items
   end
+  if filtered_items == nil
+    raise UdaciListErrors::NoItemsOfThatType
+  end
+  return filtered_items
+end
 end

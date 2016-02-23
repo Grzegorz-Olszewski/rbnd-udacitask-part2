@@ -19,7 +19,7 @@ list.add("event", "Vacation", start_date: "2016-05-28", end_date: "2016-05-31")
 list.add("link", "https://github.com", site_name: "GitHub Homepage")
 list.add("goal","Learn ruby",due: "2016-05-30",importancy_level:"very important")
 list.all
-list.delete(3,2,1)
+list.delete(6,2,1)
 list.all
 
 
