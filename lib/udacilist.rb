@@ -9,11 +9,12 @@ class UdaciList
   end
   def add(type, description, options={})
     type = type.downcase
-    if type != "todo" && type != "event" && type != "link" && type != "goal"
+    types = ["todo","event","link","goal"]
+    if types.include?(type) == false
       raise UdaciListErrors::InvalidItemType
     end
-    if   options[:priority] != nil &&options[:priority] != "high" && options[:priority] != "medium" \
-      && options[:priority] != "low" 
+    priorities = [nil,"high","medium","low"]
+    if   priorities.include?(options[:priority]) == false 
       raise UdaciListErrors::InvalidPriorityValue
     end
     @items.push TodoItem.new(type,description, options) if type == "todo"
@@ -25,7 +26,8 @@ class UdaciList
     if (@items.length - (1 + other_indexes.length)) < index
       raise UdaciListErrors::IndexExceedsListSize
     end
-    @items.delete_at(index)
+    other_indexes.push(index)
+    other_indexes.sort! { |x,y| y <=> x}
     other_indexes.each do |to_delete|
       @items.delete_at(to_delete)
     end

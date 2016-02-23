@@ -14,3 +14,4 @@ class LinkItem
     format_description(@type,@description) + "site name: " + format_name
   end
 end
+  
