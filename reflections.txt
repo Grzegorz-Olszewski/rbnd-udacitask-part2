@@ -1,13 +1,21 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+I chose terminal-table. I use it in all method in udacilist class. It makes table look nice.
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) New class, and item GoalItem. You can add goal to list with level of importance. 
+  b) I changed delete method to allow deletion of multiply items.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+4-5 hours
 2. What was the most rewarding challenge you conquered?
+All those errors that I though through.
 3. What two additional features did you build? Why?
+New item type-goal, and I changed delete method to allow deletion of multiply items.
+I think goal is completely different than to-do. Goal is built upon to-dos, so it's worth having own type.
+Deletion of multiply items at once might be handy :).
 4. Where do you still have room to grow?
+I think that I should make some strategy for finding solutions. When I have some error I try everything without
+any order or reflection.

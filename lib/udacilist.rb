@@ -40,10 +40,9 @@ class UdaciList
     @items.each_with_index do |item, position|
       t.add_row [position + 1,item.details]
     end
-    
   end
   table.style = {:border_x => "=", :border_i => "x"}
-    puts table
+  puts table
 end
   
 

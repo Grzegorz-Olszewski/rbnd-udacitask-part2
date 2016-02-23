@@ -1,4 +1,4 @@
-class GoalItem
+class GoalItem	
 	include Listable
 	attr_reader :type, :description, :due, :importancy_level
 	def initialize(type,description, options={})

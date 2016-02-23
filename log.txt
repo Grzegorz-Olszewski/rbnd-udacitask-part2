@@ -1,0 +1,59 @@
+commit 5b8673891e776da06ae285804c84fd021e876b5e
+Author: Grzegorz-Olszewski <grzegorz.olszewski10@gmail.com>
+Date:   Tue Feb 23 11:10:15 2016 +0100
+
+    I changed delete method to allow deletion of multiply items.
+
+commit 0b4d329b06d43f08fe5fd81e19f7cab37d16903a
+Author: Grzegorz-Olszewski <grzegorz.olszewski10@gmail.com>
+Date:   Tue Feb 23 10:51:38 2016 +0100
+
+    I added: termial-table gem (tables are more sweet), item type to description, method filter that return list with given type, new class goal.
+
+commit 5103f3a6d844de38adbbe59a2d7cdc97e474a6d4
+Author: Grzegorz-Olszewski <grzegorz.olszewski10@gmail.com>
+Date:   Sun Feb 21 15:57:50 2016 +0100
+
+    Format_description method added in listable, and removed from other classes.
+
+commit 68aab52057d8e55093ba1d8bb6bffb6e101d7392
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Thu Jan 14 16:33:03 2016 -0800
+
+    Updated README to clarify feature requirements
+
+commit 44c0ac9bbf25cfcb0fb2804df173024272b22079
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Wed Jan 13 13:15:43 2016 -0800
+
+    Change filter method requirement
+
+commit ff315acad10f611b79aaedfec65b11aef55a6378
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Wed Jan 13 11:52:22 2016 -0800
+
+    Add clarification about filter method
+
+commit ee74dea2ba39e201720aca9c29380f920a268600
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 16:32:37 2016 -0800
+
+    Add filter by item type demo to starter code
+
+commit 154160cf3b7ff1a29f5ef8e987a219852cac0f12
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 11:09:40 2016 -0800
+
+    Add links for gem sources
+
+commit 6c365dc917cd32a5e8c520160ec58198cc8cb6d1
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 11:06:54 2016 -0800
+
+    Add rubric link
+
+commit ad33c7f02fec47e51c72da5cde3f8032f7b8a111
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 10:58:34 2016 -0800
+
+    Initial commit
