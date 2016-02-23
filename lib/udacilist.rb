@@ -21,12 +21,16 @@ class UdaciList
     @items.push LinkItem.new(type,description, options) if type == "link"
     @items.push GoalItem.new(type,description, options) if type == "goal"
   end
-  def delete(index)
-    if (@items.length - 1) < index
+  def delete(index, *other_indexes)
+    if (@items.length - (1 + other_indexes.length)) < index
       raise UdaciListErrors::IndexExceedsListSize
     end
-    @items.delete_at(index - 1)
+    @items.delete_at(index)
+    other_indexes.each do |to_delete|
+      @items.delete_at(to_delete)
+    end
   end
+
   def all
     if @title == nil
      @title = "Untitled List"
@@ -36,21 +40,23 @@ class UdaciList
     @items.each_with_index do |item, position|
       t.add_row [position + 1,item.details]
     end
+    
   end
   table.style = {:border_x => "=", :border_i => "x"}
-  puts table
+    puts table
 end
+  
 
-def filter(item_type)
-  filtered_items = self.class.new(title:"List of #{item_type}'s from #{@title}")
-  @items.each do |item|
-    if item.type == item_type
-      filtered_items.items.push item
+  def filter(item_type)
+    filtered_items = self.class.new(title:"List of #{item_type}'s from #{@title}")
+    @items.each do |item|
+      if item.type == item_type
+        filtered_items.items.push item
+      end
     end
+    if filtered_items == nil
+      raise UdaciListErrors::NoItemsOfThatType
+    end
+    return filtered_items
   end
-  if filtered_items == nil
-    raise UdaciListErrors::NoItemsOfThatType
-  end
-  return filtered_items
-end
 end
